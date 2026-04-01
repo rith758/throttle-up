@@ -67,7 +67,7 @@ export default function NetworkPage() {
     }
 
     if (connectionsRes.data) {
-      setConnections(connectionsRes.data as Connection[]);
+      setConnections(connectionsRes.data);
     }
 
     setLoading(false);
