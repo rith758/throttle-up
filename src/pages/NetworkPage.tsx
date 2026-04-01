@@ -53,7 +53,7 @@ export default function NetworkPage() {
 
     const [profilesRes, connectionsRes] = await Promise.all([
       supabase.from("profiles").select("*"),
-      supabase.from("connections" as any).select("*"),
+      supabase.from("connections" as any).select("*") as unknown as { data: Connection[] | null },
     ]);
 
     if (profilesRes.data) {
