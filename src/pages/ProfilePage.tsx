@@ -18,6 +18,8 @@ export default function ProfilePage() {
   const [editing, setEditing] = useState(false);
   const [name, setName] = useState("");
   const [interests, setInterests] = useState("");
+  const [whatsapp, setWhatsapp] = useState("");
+  const [socialLink, setSocialLink] = useState("");
 
   const fetchProfile = async () => {
     if (!user) return;

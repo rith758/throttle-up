@@ -343,7 +343,7 @@ export default function NetworkPage() {
                           <Button
                             variant="outline"
                             disabled
-                            className="w-full cursor-default border-green-500/30 text-green-400"
+                            className="w-full cursor-default border-primary/30 text-primary"
                             size="sm"
                           >
                             <CheckCircle className="mr-1.5 h-4 w-4" />
