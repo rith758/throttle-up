@@ -54,7 +54,7 @@ export default function ProfilePage() {
   const handleSave = async () => {
     if (!user) return;
     const interestsArr = interests.split(",").map((i) => i.trim()).filter(Boolean);
-    const { error } = await supabase.from("profiles").update({ name: name.trim(), interests: interestsArr }).eq("user_id", user.id);
+    const { error } = await supabase.from("profiles").update({ name: name.trim(), interests: interestsArr, whatsapp: whatsapp.trim(), social_link: socialLink.trim() } as any).eq("user_id", user.id);
     if (error) {
       toast.error("Failed to update profile");
     } else {
