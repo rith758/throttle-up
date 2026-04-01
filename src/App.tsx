@@ -10,6 +10,7 @@ import EventsPage from "@/pages/EventsPage";
 import CreateEventPage from "@/pages/CreateEventPage";
 import AuthPage from "@/pages/AuthPage";
 import ProfilePage from "@/pages/ProfilePage";
+import NetworkPage from "@/pages/NetworkPage";
 import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient();
