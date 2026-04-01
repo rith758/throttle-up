@@ -93,6 +93,14 @@ export default function ProfilePage() {
                       <Label>Interests (comma-separated)</Label>
                       <Input value={interests} onChange={(e) => setInterests(e.target.value)} placeholder="Cruiser, Touring, Off-road" className="mt-1 bg-secondary border-border" maxLength={500} />
                     </div>
+                    <div>
+                      <Label>WhatsApp</Label>
+                      <Input value={whatsapp} onChange={(e) => setWhatsapp(e.target.value)} placeholder="+1 234 567 890" className="mt-1 bg-secondary border-border" maxLength={20} />
+                    </div>
+                    <div>
+                      <Label>Social Link</Label>
+                      <Input value={socialLink} onChange={(e) => setSocialLink(e.target.value)} placeholder="https://instagram.com/..." className="mt-1 bg-secondary border-border" maxLength={200} />
+                    </div>
                     <div className="flex gap-2">
                       <Button onClick={handleSave} className="bg-gradient-fire text-primary-foreground hover:opacity-90" size="sm">Save</Button>
                       <Button variant="outline" size="sm" onClick={() => setEditing(false)}>Cancel</Button>
