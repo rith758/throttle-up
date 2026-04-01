@@ -29,6 +29,7 @@ const App = () => (
             <Route path="/create-event" element={<CreateEventPage />} />
             <Route path="/auth" element={<AuthPage />} />
             <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/network" element={<NetworkPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AuthProvider>
