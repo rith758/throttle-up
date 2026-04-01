@@ -10,6 +10,7 @@ import EventsPage from "@/pages/EventsPage";
 import CreateEventPage from "@/pages/CreateEventPage";
 import AuthPage from "@/pages/AuthPage";
 import ProfilePage from "@/pages/ProfilePage";
+import NetworkPage from "@/pages/NetworkPage";
 import NotFound from "@/pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -28,6 +29,7 @@ const App = () => (
             <Route path="/create-event" element={<CreateEventPage />} />
             <Route path="/auth" element={<AuthPage />} />
             <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/network" element={<NetworkPage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AuthProvider>

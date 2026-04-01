@@ -12,6 +12,7 @@ export default function Navbar() {
   const links = [
     { to: "/", label: "Home" },
     { to: "/events", label: "Events" },
+    { to: "/network", label: "Network" },
     ...(user ? [
       { to: "/create-event", label: "Create Event" },
       { to: "/profile", label: "Profile" },
