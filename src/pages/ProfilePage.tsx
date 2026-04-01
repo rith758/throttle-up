@@ -28,6 +28,8 @@ export default function ProfilePage() {
       setProfile(data);
       setName(data.name);
       setInterests((data.interests || []).join(", "));
+      setWhatsapp((data as any).whatsapp || "");
+      setSocialLink((data as any).social_link || "");
     }
   };
 
