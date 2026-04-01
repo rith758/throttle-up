@@ -14,6 +14,30 @@ export type Database = {
   }
   public: {
     Tables: {
+      connections: {
+        Row: {
+          created_at: string
+          id: string
+          receiver_id: string
+          sender_id: string
+          status: Database["public"]["Enums"]["connection_status"]
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          receiver_id: string
+          sender_id: string
+          status?: Database["public"]["Enums"]["connection_status"]
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          receiver_id?: string
+          sender_id?: string
+          status?: Database["public"]["Enums"]["connection_status"]
+        }
+        Relationships: []
+      }
       event_participants: {
         Row: {
           event_id: string
@@ -87,8 +111,10 @@ export type Database = {
           id: string
           interests: string[] | null
           name: string
+          social_link: string | null
           updated_at: string
           user_id: string
+          whatsapp: string | null
         }
         Insert: {
           avatar_url?: string | null
@@ -97,8 +123,10 @@ export type Database = {
           id?: string
           interests?: string[] | null
           name?: string
+          social_link?: string | null
           updated_at?: string
           user_id: string
+          whatsapp?: string | null
         }
         Update: {
           avatar_url?: string | null
@@ -107,8 +135,10 @@ export type Database = {
           id?: string
           interests?: string[] | null
           name?: string
+          social_link?: string | null
           updated_at?: string
           user_id?: string
+          whatsapp?: string | null
         }
         Relationships: []
       }
@@ -120,7 +150,7 @@ export type Database = {
       [_ in never]: never
     }
     Enums: {
-      [_ in never]: never
+      connection_status: "pending" | "accepted"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -247,6 +277,8 @@ export type CompositeTypes<
 
 export const Constants = {
   public: {
-    Enums: {},
+    Enums: {
+      connection_status: ["pending", "accepted"],
+    },
   },
 } as const

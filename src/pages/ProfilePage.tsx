@@ -18,6 +18,8 @@ export default function ProfilePage() {
   const [editing, setEditing] = useState(false);
   const [name, setName] = useState("");
   const [interests, setInterests] = useState("");
+  const [whatsapp, setWhatsapp] = useState("");
+  const [socialLink, setSocialLink] = useState("");
 
   const fetchProfile = async () => {
     if (!user) return;
@@ -26,6 +28,8 @@ export default function ProfilePage() {
       setProfile(data);
       setName(data.name);
       setInterests((data.interests || []).join(", "));
+      setWhatsapp((data as any).whatsapp || "");
+      setSocialLink((data as any).social_link || "");
     }
   };
 
@@ -50,7 +54,7 @@ export default function ProfilePage() {
   const handleSave = async () => {
     if (!user) return;
     const interestsArr = interests.split(",").map((i) => i.trim()).filter(Boolean);
-    const { error } = await supabase.from("profiles").update({ name: name.trim(), interests: interestsArr }).eq("user_id", user.id);
+    const { error } = await supabase.from("profiles").update({ name: name.trim(), interests: interestsArr, whatsapp: whatsapp.trim(), social_link: socialLink.trim() } as any).eq("user_id", user.id);
     if (error) {
       toast.error("Failed to update profile");
     } else {
@@ -88,6 +92,14 @@ export default function ProfilePage() {
                     <div>
                       <Label>Interests (comma-separated)</Label>
                       <Input value={interests} onChange={(e) => setInterests(e.target.value)} placeholder="Cruiser, Touring, Off-road" className="mt-1 bg-secondary border-border" maxLength={500} />
+                    </div>
+                    <div>
+                      <Label>WhatsApp</Label>
+                      <Input value={whatsapp} onChange={(e) => setWhatsapp(e.target.value)} placeholder="+1 234 567 890" className="mt-1 bg-secondary border-border" maxLength={20} />
+                    </div>
+                    <div>
+                      <Label>Social Link</Label>
+                      <Input value={socialLink} onChange={(e) => setSocialLink(e.target.value)} placeholder="https://instagram.com/..." className="mt-1 bg-secondary border-border" maxLength={200} />
                     </div>
                     <div className="flex gap-2">
                       <Button onClick={handleSave} className="bg-gradient-fire text-primary-foreground hover:opacity-90" size="sm">Save</Button>
