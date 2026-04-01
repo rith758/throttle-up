@@ -2,7 +2,7 @@
 
 🔗 Live Website
 
-👉 https://throttle-3uhv6iwy8-rithishs-projects-4d71bf36.vercel.app
+👉 https://throttle-6x93eramc-rithishs-projects-4d71bf36.vercel.app
 
 ---
 
